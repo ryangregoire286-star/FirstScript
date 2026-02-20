@@ -19,3 +19,10 @@ echo "$b + $c = "${add}
 echo "$b - $c = "${sub}
 echo "$b * $c = "${mul}
 echo "$b / $c = "${div}
+
+counter=2
+
+while [ $counter -le 5 ]; do
+    echo "Counter is $counter"
+    ((counter++))
+done
