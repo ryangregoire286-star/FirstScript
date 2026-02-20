@@ -2,27 +2,34 @@
 
 date +"%D %T" 
 echo $date
+done_command="DONE"
 
+function getFunction {
 
-read -r -p "Enter Name: " a
-echo "Hello "${a}
+    read -r -p "Enter Name: " a
+    echo "Hello "${a}
 
-read -r -p "Enter Number 1: " b
-read -r -p "Enter Number 2: " c
+    counter=2
 
-add=$((b+c))
-sub=$((b-c))
-mul=$((b*c))
-div=$((b/c))
+    while [ $counter -le 5 ]; do
 
-echo "$b + $c = "${add}
-echo "$b - $c = "${sub}
-echo "$b * $c = "${mul}
-echo "$b / $c = "${div}
+        read -r -p "Enter Number 1: " b
+        read -r -p "Enter Number 2: " c
+                    
+        add=$((b+c))
+        sub=$((b-c))
+        mul=$((b*c))
+        div=$((b/c))
 
-counter=2
+        echo "$b + $c = "${add}
+        echo "$b - $c = "${sub}
+        echo "$b * $c = "${mul}
+        echo "$b / $c = "${div}
+        
+        ((counter++))
+        echo "Application is $done_command"
+    done
 
-while [ $counter -le 5 ]; do
-    echo "Counter is $counter"
-    ((counter++))
-done
+} 
+
+getFunction
